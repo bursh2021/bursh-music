@@ -6,7 +6,7 @@ const chillHop=()=>{
 
     return [
         {name: 'Beaver Creek',
-        cover: 'https://chillhop.com/wp-content/themes/chillhop/assets/images/releases/fall-2020/fall2020-title.png',
+        cover: 'https://chillhop.com/wp-content/uploads/2020/12/7e98d3028a22ee7f16f6a9bfcdc2089f089777a5-1024x1024.jpg',
         artist:'Aso, Middle School, Aviino',
         audio:'https://mp3.chillhop.com/serve.php/?mp3=8127',
         color:["#205950","#2ab3bf"],
@@ -38,6 +38,24 @@ color:["#205950","#2ab3bf"],
 id: uuidv4(),
 active:false,
 },
+{name: 'Beaver Creek',
+cover: 'https://chillhop.com/wp-content/uploads/2020/12/7e98d3028a22ee7f16f6a9bfcdc2089f089777a5-1024x1024.jpg',
+artist:'Aso, Middle School, Aviino',
+audio:'https://mp3.chillhop.com/serve.php/?mp3=8127',
+color:["#205950","#2ab3bf"],
+id: uuidv4(),
+active:false,
+},
+
+{name: 'Beaver Creek',
+cover: 'https://chillhop.com/wp-content/uploads/2020/12/7e98d3028a22ee7f16f6a9bfcdc2089f089777a5-1024x1024.jpg',
+artist:'Aso, Middle School, Aviino',
+audio:'https://mp3.chillhop.com/serve.php/?mp3=8127',
+color:["#205950","#2ab3bf"],
+id: uuidv4(),
+active:false,
+},
+
     ]
 }
 

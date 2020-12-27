@@ -1,0 +1,45 @@
+*{
+    scrollbar-width: thin;
+    scrollbar-color: rgba(155,155,155,0.5)transparent;
+}
+*::-webkit-scrollbar{width: 4px;}
+*::-webkit-scrollbar-track{
+    background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(149, 149, 160,0.5) transparent;
+    border-radius: 20px;
+    border: 2px;
+}
+
+.library {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20rem;
+    height: 100%;
+    background-color: rgb(204, 211, 211);
+    box-shadow: 2px 2px 50px rgb(65, 63, 63);
+    overflow: scroll;
+    cursor: pointer;
+    h2 {
+        padding: 2rem;
+    }
+}
+.LibrarySong {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+    font-size: 10px;
+    padding:1rem;
+    &:hover {
+        background-color: rgb(149, 149, 160);
+    }
+    h1,p {
+        font-size: 0.9rem;
+    }
+    img { 
+        width: 20%;
+    }
+}

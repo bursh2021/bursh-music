@@ -1,11 +1,10 @@
 @import 'player';
 @import 'song';
+@import 'Library';
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
+    font-family: "lato",sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -18,4 +17,6 @@ body {
 
   h1,h2,h3 {
     color: rgb(44, 44, 44);
+    font-weight: 400;
+    color:rgb(100, 100, 100) ;
   }
