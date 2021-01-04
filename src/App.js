@@ -4,15 +4,16 @@ import Player from "./components/Player";
 import data from './until';
 import Library from "./components/Library";
 
+
  
 function App() {
  
   const audioRef=useRef(null)
   const [songs, setSongs] = useState(data());
-  const [currentSong, setCurrentSong] = useState(songs[3])
+  const [currentSong, setCurrentSong] = useState(songs[0])
   const [isPlaying, setIsPlaying] = useState(false)
 
-
+  const [selectedSongs, setSelectedSongs] = useState(false)
 
 
 
@@ -26,28 +27,53 @@ function App() {
 
 const [SongInfo, setSongInfo] = useState({
 currentTime:null,//current time song
-duration:null,//all time song
+duration:0,//all time song
 })
 
+
+const songEndHandler= async()=>{
+  let currentIndex=songs.findIndex((song)=>song.id===currentSong.id);
+    await  setCurrentSong(songs[(currentIndex + 1) % songs.length] )
+    if(isPlaying){
+      audioRef.current.play()
+    }
+}
+
   return (
-    <div className="App">
-      <Song currentSong={currentSong} setSongs={setSongs} setCurrentSong={setCurrentSong}/> 
+    <div className={selectedSongs ? 'App': 'Libarary_active'}>
+   
+      <Song 
+      setSelectedSongs={setSelectedSongs}
+      selectedSongs={selectedSongs}
+      currentSong={currentSong}
+       setSongs={setSongs}
+        setCurrentSong={setCurrentSong}/> 
+
        <Player audioRef={audioRef} 
       currentSong={currentSong}
        isPlaying={isPlaying} 
        setIsPlaying={setIsPlaying} 
        setSongInfo={setSongInfo}
        SongInfo={SongInfo}
-      
-   
+       songs={songs}
+       setCurrentSong={setCurrentSong}
+       currentSong={currentSong}
+       setSongs={setSongs}
        /> 
-       <Library audioRef={audioRef} songs={songs} setCurrentSong={setCurrentSong}/>
+       <Library
+       setSelectedSongs={setSelectedSongs}
+       selectedSongs={selectedSongs}
+       isPlaying={isPlaying}
+        audioRef={audioRef}
+        songs={songs}
+        setSongs={setSongs}
+         setCurrentSong={setCurrentSong}/>
        <audio 
             ref={audioRef}
             src={currentSong.audio}
             onTimeUpdate={timeUpdateHandler}
             onLoadedMetadata={timeUpdateHandler}
-            isPlaying={isPlaying}
+            onEnded={songEndHandler}
              ></audio>
     </div>
   );

@@ -11,7 +11,7 @@ const chillHop=()=>{
         audio:'https://mp3.chillhop.com/serve.php/?mp3=8127',
         color:["#205950","#2ab3bf"],
         id: uuidv4(),
-        active:false,
+        active:true,
     },
  
     {name: 'Beaver Creek',
